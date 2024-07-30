@@ -1,0 +1,17 @@
+package com.example.decorator;
+
+import com.example.component.Notifier;
+
+public abstract class NotifierDecorator implements Notifier {
+    protected Notifier wrappedNotifier;
+
+    public NotifierDecorator(Notifier notifier) {
+        this.wrappedNotifier = notifier;
+    }
+
+    @Override
+    public void send(String message) {
+        wrappedNotifier.send(message);
+    }
+}
+
